@@ -63,3 +63,6 @@ Istället för "Peka mot muspekare" sparar vi senaste skärmtryckning i variabel
 I AppLab finns inga sprajtar. Vi kan själva skriva kod som efterliknar det som Scratch gör. 
 Det är ett roligt sätt att lära sig JavaScript tycker jag.
 
+# Referenser
+* https://studio.code.org/projects/applab/a8BQLOAeazZu8Yzv1hsOT1TNpa5MUwu0r1ZIxEf3sEY
+
