@@ -38,13 +38,18 @@ Ge bilderna två olika id, t.ex. `whaleLeft` och `whaleRight`.
 
 ### Steg 04: "för alltid"
 Händelser i AppLab hanteras på ett lite annat sätt än i Scratch.
-Vi bygger upp vår app så att vi har en funktion som körs 50 gånger i sekunden, alltså 50 FPS. 
-Den funktionen ska rita upp våra sprajtar som de ser ut just för tillfället. 
-Vi kallar funktionen för `update()` och för att den ska köras skriver vi
+Vi bygger upp vår app så att vi har en funktion `update()` som körs 50 gånger i sekunden, alltså 50 FPS. 
+Eftersom 1 s = 1000 ms så är det 1000 / 50 = 20 ms mellan anropen till `update`.
+Funktionen ska rita upp *alla* våra sprajtar som de ser ut just för tillfället. 
+För att `update` ska köras var 20 ms skriver vi
 ```
-  timedLoop(20, update);
+timedLoop(20, update);
  ```
-
+Tills vidare lägger vi in en tom `update()` och testkör så att allt fungerar som tidigare.
+```
+function update() {
+}
+```
 ### Steg 05: Rörelse och peka mot muspekare
 Här har vi tre olika utmaningar.
 * I AppLab har vi ingen muspekare. Vi fångar istället upp skärmtryck med blocket `onEvent` som ger x- och y-koordinater där vi tryckte på skärmen.
