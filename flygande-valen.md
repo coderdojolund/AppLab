@@ -63,9 +63,10 @@ Istället för "Peka mot muspekare" sparar vi senaste skärmtryckning i variabel
 I AppLab finns inga sprajtar. Vi kan själva skriva kod som efterliknar det som Scratch gör. 
 Det är ett roligt sätt att lära sig JavaScript tycker jag.
 
-*Vad är en sprajt egentligen?*
-Om vi öppnar info-rutan för en sprajt i Scratch, ser vi lite av den information som en sprajt innehåller.
-BILDLÄNK
+Vad är en sprajt egentligen? Om vi öppnar info-rutan för en sprajt i Scratch, ser vi lite av den information som en sprajt innehåller. Så här ser valens info ut:
+
+![scratch-sprite-info](https://user-images.githubusercontent.com/4598641/44079353-14c1f5e2-9fa9-11e8-9227-6fe57476257a.png)
+
 
 # Referenser
 * https://studio.code.org/projects/applab/a8BQLOAeazZu8Yzv1hsOT1TNpa5MUwu0r1ZIxEf3sEY
