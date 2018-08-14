@@ -27,7 +27,7 @@ Gå igenom  de grundläggande exemplen för AppLab: LÄNKAR
 
 ### Steg 01, 02, 03: 
 
-Skapa ett nytt projekt i AppLab
+Skapa ett nytt projekt i AppLab och ge det ett bra namn.
 
 Exportera två sprajtar (i bitmapformat) med valens klädsel från Scratch och importera dem till AppLab. 
 En sprajt ska vara vänd åt höger och en åt vänster. 
@@ -39,7 +39,7 @@ Ge bilderna två olika id, t.ex. `whaleLeft` och `whaleRight`.
 ### Steg 04: "för alltid"
 Händelser i AppLab hanteras på ett lite annat sätt än i Scratch.
 Vi bygger upp vår app så att vi har en funktion som körs 50 gånger i sekunden, alltså 50 FPS. 
-Den funktionen ska rita upp våra sprajtar som de ser ut just då. 
+Den funktionen ska rita upp våra sprajtar som de ser ut just för tillfället. 
 Vi kallar funktionen för `update()` och för att den ska köras skriver vi
 ```
   timedLoop(20, update);
@@ -47,7 +47,7 @@ Vi kallar funktionen för `update()` och för att den ska köras skriver vi
 
 ### Steg 05: Rörelse och peka mot muspekare
 Här har vi tre olika utmaningar.
-* I AppLab har vi ingen muspekare utan kan fånga upp skärmtryck med blocket onEvent.
+* I AppLab har vi ingen muspekare. Vi fångar istället upp skärmtryck med blocket `onEvent` som ger x- och y-koordinater där vi tryckte på skärmen.
 * Hur får vi vår val att röra sig?
 * Hur får vi vår val att peka i en viss riktning?
 
@@ -62,6 +62,10 @@ Istället för "Peka mot muspekare" sparar vi senaste skärmtryckning i variabel
 *Hur får vi vår val att röra sig?*
 I AppLab finns inga sprajtar. Vi kan själva skriva kod som efterliknar det som Scratch gör. 
 Det är ett roligt sätt att lära sig JavaScript tycker jag.
+
+*Vad är en sprajt egentligen?*
+Om vi öppnar info-rutan för en sprajt i Scratch, ser vi lite av den information som en sprajt innehåller.
+BILDLÄNK
 
 # Referenser
 * https://studio.code.org/projects/applab/a8BQLOAeazZu8Yzv1hsOT1TNpa5MUwu0r1ZIxEf3sEY
