@@ -64,15 +64,59 @@ Istället för "Peka mot muspekare" sparar vi senaste skärmtryckning i variabel
     lastClick.y = event.y;
   });
 ```
+
+Vi kan testa vår kod genom att skriva ut koordinaterna i `update()`-funktionen så här:
+```
+function update() {
+  console.log(lastClick.x + " " + lastClick.y);
+}
+```
 *Hur får vi vår val att röra sig?*
 I AppLab finns inga sprajtar. Vi kan själva skriva kod som efterliknar det som Scratch gör. 
 Det är ett roligt sätt att lära sig JavaScript tycker jag.
 
 Vad är en sprajt egentligen? Om vi öppnar info-rutan för en sprajt i Scratch, ser vi lite av den information som en sprajt innehåller. Så här ser valens info ut:
-
 ![scratch-sprite-info](https://user-images.githubusercontent.com/4598641/44079353-14c1f5e2-9fa9-11e8-9227-6fe57476257a.png)
 
+Vi ser att sprajten har olika egenskaper som kan ha olika värden. 
+I Scratch gäller följande:
+* `direction` är det håll som sprajten rör sig åt. Riktningen räknas i grader med 0 grader rakt uppåt, 90 grader rakt åt höger, 180 grader rakt neråt och 270 grader rakt åt vänster.
+* `x` och `y` talar om var sprajtens mittpunkt är. Det kan vi se i Scratch genom att dra omkring en sprajt och se hur `x` och `y` ändrar sig eller genom att sätta en ny mittpunkt på sprajten och se att x och y är samma fastän sprajten hoppar omkring.
 
-# Referenser
+Visst verkar `x`, `y` och `direction` intressanta för oss? Vi ska ju peka valen i riktning mot `lastClick` och sen gå 10 steg enligt beskrivningen. Om vi skapar en variabel som heter `whale` med egenskaperna `x`, `y` och `direction` skulle det vara snyggt att kunna skriva kod av typen
+```
+whale.pointTowards(lastClick.x, lastClick.y);
+whale.moveSteps(10);
+```
+Detta går faktiskt att göra i JavaScript. Det är en del jobb och vi får ta ett steg i taget.
+
+Vi börjar med att skapa sprajten `whale` som en variabel i vår kod. Vi använder klamrar för att tala om att objektet/sprajten `whale` har flera olika egenskaper.
+```
+var whale = {x: 0, y: 0, direction: 0};
+```
+I JavaScript kommer värdena att heta `whale.x`, `whale.y` och `whale.direction`, ungefär som variabler i Scratch som är knutna till en viss sprajt. Just nu har alla värdet 0.
+
+Men `whale.pointTowards` och `whale.moveSteps`: var kommer de ifrån?
+De lägger vi också in i `whale` som funktioner.
+Eftersom alla sprajtar kommer att vilja använda de funktionerna så använder vi ett trick i JavaScript.
+```
+var whale = {x: 0, y: 0, direction: 0, pointTowards: pointTowards, moveSteps: moveSteps };
+function pointTowards(x, y) {
+  console.log("pointTowards " + x + " " + y);
+}
+function moveSteps(steps) {
+  console.log("moveSteps " + steps);
+}
+```
+
+Varför är det två `pointTowards` i `whale`? 
+1. Det första `pointTowards` är namnet vi efter punkten i `whale.pointTowards`
+1. Det andra `pointTowards` talar om att jobbet görs av en funktion längre ner i koden med samma namn. Vi använder samma namn för enkelhets skull
+
+Om vi nu lägger in vår kod i `update()` så går det att köra och vi kan se loggutskrifter. Inget mer händer än.
+
+Nu kan vår kod se ut ungefär så här:
+
+# Referenser 
 * https://studio.code.org/projects/applab/a8BQLOAeazZu8Yzv1hsOT1TNpa5MUwu0r1ZIxEf3sEY
 
