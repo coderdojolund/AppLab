@@ -36,6 +36,8 @@ Du kan lätt spegelvända dem i Scratch innan du exporterar.
 När du importerar bilderna som Image i AppLab kan en storlek på 100 pixlars bredd och 40 pixlars höjd vara lagom. 
 Ge bilderna två olika id, t.ex. `whaleLeft` och `whaleRight`.
 
+<img src="https://user-images.githubusercontent.com/4598641/44286727-69cbd800-a26a-11e8-95e5-e9c2d49bcc40.png" width="200">
+
 ### Steg 04: "för alltid"
 Händelser i AppLab hanteras på ett lite annat sätt än i Scratch.
 Vi bygger upp vår app så att vi har en funktion `update()` som körs 50 gånger i sekunden, alltså 50 FPS. 
