@@ -50,6 +50,7 @@ Tills vidare lägger vi in en tom `update()` och testkör så att allt fungerar 
 function update() {
 }
 ```
+
 ### Steg 05: Rörelse och peka mot muspekare
 Här har vi tre olika utmaningar.
 * I AppLab har vi ingen muspekare. Vi fångar istället upp skärmtryck med blocket `onEvent` som ger x- och y-koordinater där vi tryckte på skärmen.
@@ -71,6 +72,20 @@ function update() {
   console.log(lastClick.x + " " + lastClick.y);
 }
 ```
+
+Så här kan koden se ut nu:
+```
+var lastClick = {x: 0, y: 0};
+onEvent("screen1", "click", function(event) {
+  lastClick.x = event.x;
+  lastClick.y = event.y;
+});
+timedLoop(20, update);
+function update() {
+  console.log(lastClick.x + " " + lastClick.y);
+}
+```
+
 *Hur får vi vår val att röra sig?*
 I AppLab finns inga sprajtar. Vi kan själva skriva kod som efterliknar det som Scratch gör. 
 Det är ett roligt sätt att lära sig JavaScript tycker jag.
