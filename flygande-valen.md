@@ -42,11 +42,11 @@ Vi bygger upp vår app så att vi har en funktion `update()` som körs 50 gånge
 Eftersom 1 s = 1000 ms så är det 1000 / 50 = 20 ms mellan anropen till `update`.
 Funktionen ska rita upp *alla* våra sprajtar som de ser ut just för tillfället. 
 För att `update` ska köras var 20 ms skriver vi
-```
+```javascript
 timedLoop(20, update);
  ```
 Tills vidare lägger vi in en tom `update()` och testkör så att allt fungerar som tidigare.
-```
+```javascript
 function update() {
 }
 ```
@@ -58,7 +58,7 @@ Här har vi tre olika utmaningar.
 * Hur får vi vår val att peka i en viss riktning?
 
 Istället för "Peka mot muspekare" sparar vi senaste skärmtryckning i variabeln `lastClick` så här:
-```
+```javascript
   var lastClick;
   onEvent("screen1", "click", function(event) {
     lastClick.x = event.x;
@@ -67,14 +67,14 @@ Istället för "Peka mot muspekare" sparar vi senaste skärmtryckning i variabel
 ```
 
 Vi kan testa vår kod genom att skriva ut koordinaterna i `update()`-funktionen så här:
-```
+```javascript
 function update() {
   console.log(lastClick.x + " " + lastClick.y);
 }
 ```
 
 Så här kan koden se ut nu:
-```
+```javascript
 var lastClick = {x: 0, y: 0};
 onEvent("screen1", "click", function(event) {
   lastClick.x = event.x;
