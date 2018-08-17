@@ -100,14 +100,14 @@ I Scratch gäller följande:
 * `x` och `y` talar om var sprajtens mittpunkt är. Det kan vi se i Scratch genom att dra omkring en sprajt och se hur `x` och `y` ändrar sig eller genom att sätta en ny mittpunkt på sprajten och se att x och y är samma fastän sprajten hoppar omkring.
 
 Visst verkar `x`, `y` och `direction` intressanta för oss? Vi ska ju peka valen i riktning mot `lastClick` och sen gå 10 steg enligt beskrivningen. Om vi skapar en variabel som heter `whale` med egenskaperna `x`, `y` och `direction` skulle det vara snyggt att kunna skriva kod av typen
-```
+```javascript
 whale.pointTowards(lastClick.x, lastClick.y);
 whale.moveSteps(10);
 ```
 Detta går faktiskt att göra i JavaScript. Det är en del jobb och vi får ta ett steg i taget.
 
 Vi börjar med att skapa sprajten `whale` som en variabel i vår kod. Vi använder klamrar för att tala om att objektet/sprajten `whale` har flera olika egenskaper.
-```
+```javascript
 var whale = {x: 0, y: 0, direction: 0};
 ```
 I JavaScript kommer värdena att heta `whale.x`, `whale.y` och `whale.direction`, ungefär som variabler i Scratch som är knutna till en viss sprajt. Just nu har alla värdet 0.
@@ -115,7 +115,7 @@ I JavaScript kommer värdena att heta `whale.x`, `whale.y` och `whale.direction`
 Men `whale.pointTowards` och `whale.moveSteps`: var kommer de ifrån?
 De lägger vi också in i `whale` som funktioner.
 Eftersom alla sprajtar kommer att vilja använda de funktionerna så använder vi ett trick i JavaScript.
-```
+```javascript
 var whale = {x: 0, y: 0, direction: 0, pointTowards: pointTowards, moveSteps: moveSteps };
 function pointTowards(x, y) {
   console.log("pointTowards " + x + " " + y);
