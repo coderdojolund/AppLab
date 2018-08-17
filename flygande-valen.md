@@ -61,7 +61,7 @@ Här har vi tre olika utmaningar.
 
 Istället för "Peka mot muspekare" sparar vi senaste skärmtryckning i variabeln `lastClick` så här:
 ```javascript
-  var lastClick;
+  var lastClick = {x: 0, y: 0};
   onEvent("screen1", "click", function(event) {
     lastClick.x = event.x;
     lastClick.y = event.y;
