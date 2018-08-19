@@ -89,6 +89,14 @@ function update() {
 }
 ```
 
+När vi trycker på skärmen ser vi utskrifter av koordinaterna där vi tryckte. Koordinaterna verkar vara flyttal, alltså med decimaler:
+```
+...
+pointTowards 246.4 149.333333334
+moveSteps 10
+...
+```
+
 ### Peka valen i en viss riktning
 Valen är en sprajt men i AppLab finns inga sprajtar. Vi kan själva skriva kod som efterliknar det som Scratch gör.
 
@@ -128,8 +136,8 @@ function moveSteps(steps) {
 ```
 
 Varför är det två `pointTowards` i `whale`? 
-1. Det första `pointTowards` är namnet punkten i `whale.pointTowards`
-1. Det andra `pointTowards` talar om att jobbet görs av en funktion längre ner i koden med samma namn. Vi använder samma namn för enkelhets skull
+1. Det första `pointTowards` är namnet efter punkten i `whale.pointTowards`
+1. Det andra `pointTowards` talar om att jobbet görs av en funktion med samma namn längre ner i koden med samma namn. Vi använder samma namn för enkelhets skull
 
 Varför delar vi upp koden? Det blir lättare att först hur sprajten `whale` fungerar vi lägger funktionerna för sig själv.
 
@@ -156,13 +164,6 @@ function pointTowards(x, y) {
 function moveSteps(steps) {
   console.log("moveSteps " + steps);
 }
-```
-När vi trycker på skärmen ser vi utskrifter av koordinaterna där vi tryckte. Koordinaterna verkar vara flyttal, alltså med decimaler:
-```
-...
-pointTowards 246.4 149.333333334
-moveSteps 10
-...
 ```
 
 # Referenser 
