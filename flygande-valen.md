@@ -53,7 +53,7 @@ function update() {
 }
 ```
 
-### Steg 05: Rörelse och peka mot muspekare
+### Steg 05: Peka mot muspekare, gå 10 steg
 Här har vi tre olika utmaningar.
 * I AppLab har vi ingen muspekare. Vi fångar istället upp skärmtryck med blocket `onEvent` som ger x- och y-koordinater där vi tryckte på skärmen.
 * Hur får vi vår val att röra sig?
