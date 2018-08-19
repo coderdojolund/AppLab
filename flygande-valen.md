@@ -157,7 +157,7 @@ function moveSteps(steps) {
   console.log("moveSteps " + steps);
 }
 ```
-När vi trycker på skärmen ser vi utskrifter av koordinaterna där vi tryckte. Koordinaterna verkar vara flyttal:
+När vi trycker på skärmen ser vi utskrifter av koordinaterna där vi tryckte. Koordinaterna verkar vara flyttal, alltså med decimaler:
 ```
 ...
 pointTowards 246.4 149.333333334
