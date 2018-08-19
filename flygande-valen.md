@@ -55,11 +55,12 @@ function update() {
 
 ### Steg 05: Peka mot muspekare, gå 10 steg
 Här har vi tre olika utmaningar.
-* I AppLab har vi ingen muspekare. Vi fångar istället upp skärmtryck med blocket `onEvent` som ger x- och y-koordinater där vi tryckte på skärmen.
-* Hur får vi vår val att röra sig?
-* Hur får vi vår val att peka i en viss riktning?
+* I AppLab har vi ingen muspekare. Vi använder istället blocket `onEvent` som ger x- och y-koordinater där vi tryckte på skärmen.
+* Hur får vi vår val att peka i en viss riktning? Vi kollar hur Scratch gör.
+* Hur får vi vår val att röra sig? Även här kan vi få idéer från Scratch.
 
-Istället för "Peka mot muspekare" sparar vi senaste skärmtryckning i variabeln `lastClick` så här:
+### Skärmtryck istället för muspekare
+Istället för "Peka mot muspekare" sparar vi senaste skärmtryckningen i variabeln `lastClick`:
 ```javascript
   var lastClick = {x: 0, y: 0};
   onEvent("screen1", "click", function(event) {
@@ -68,7 +69,7 @@ Istället för "Peka mot muspekare" sparar vi senaste skärmtryckning i variabel
   });
 ```
 
-Vi kan testa vår kod genom att skriva ut koordinaterna i `update()`-funktionen så här:
+Vi kan testa vår kod genom att skriva ut koordinaterna i `update()`-funktionen:
 ```javascript
 function update() {
   console.log(lastClick.x + " " + lastClick.y);
@@ -88,9 +89,8 @@ function update() {
 }
 ```
 
-*Hur får vi vår val att röra sig?*
-I AppLab finns inga sprajtar. Vi kan själva skriva kod som efterliknar det som Scratch gör. 
-Det är ett roligt sätt att lära sig JavaScript tycker jag.
+### Peka valen i en viss riktning
+Valen är en sprajt men i AppLab finns inga sprajtar. Vi kan själva skriva kod som efterliknar det som Scratch gör.
 
 Vad är en sprajt egentligen? Om vi öppnar info-rutan för en sprajt i Scratch, ser vi lite av den information som en sprajt innehåller. Så här ser valens info ut:
 
@@ -108,7 +108,7 @@ whale.moveSteps(10);
 ```
 Detta går faktiskt att göra i JavaScript. Det är en del jobb och vi får ta ett steg i taget.
 
-Vi börjar med att skapa sprajten `whale` som en variabel i vår kod. Vi använder klamrar för att tala om att objektet/sprajten `whale` har flera olika egenskaper.
+Vi börjar med att skapa sprajten `whale` som en variabel i vår kod. Vi använder klamrar för att tala om att objektet/sprajten `whale` har flera olika egenskaper, precis som att `lastClick` sparar x- och y-koordinaterna.
 ```javascript
 var whale = {x: 0, y: 0, direction: 0};
 ```
@@ -128,12 +128,40 @@ function moveSteps(steps) {
 ```
 
 Varför är det två `pointTowards` i `whale`? 
-1. Det första `pointTowards` är namnet vi efter punkten i `whale.pointTowards`
+1. Det första `pointTowards` är namnet punkten i `whale.pointTowards`
 1. Det andra `pointTowards` talar om att jobbet görs av en funktion längre ner i koden med samma namn. Vi använder samma namn för enkelhets skull
 
 Om vi nu lägger in vår kod i `update()` så går det att köra och vi kan se loggutskrifter. Inget mer händer än.
 
 Nu kan vår kod se ut ungefär så här:
+
+```javascript
+var lastClick = {x: 0, y: 0};
+var whale = {x: 0, y: 0, direction: 0, pointTowards: pointTowards, moveSteps: moveSteps };
+onEvent("screen1", "click", function(event) {
+  lastClick.x = event.x;
+  lastClick.y = event.y;
+});
+timedLoop(20, update);
+function update() {
+  console.log(lastClick.x + " " + lastClick.y);
+  whale.pointTowards(lastClick.x, lastClick.y);
+  whale.moveSteps(10);
+}
+function pointTowards(x, y) {
+  console.log("pointTowards " + x + " " + y);
+}
+function moveSteps(steps) {
+  console.log("moveSteps " + steps);
+}
+```
+När vi trycker på skärmen ser vi utskrifter av koordinaterna där vi tryckte. Koordinaterna verkar vara flyttal:
+```
+...
+pointTowards 246.4 149.333333334
+moveSteps 10
+...
+```
 
 # Referenser 
 * https://studio.code.org/projects/applab/a8BQLOAeazZu8Yzv1hsOT1TNpa5MUwu0r1ZIxEf3sEY
