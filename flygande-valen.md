@@ -166,6 +166,47 @@ function moveSteps(steps) {
 }
 ```
 
+### Lite matte och många testfall
+
+Vill vi att direction ska ha samma värden som i Scratch? Isåfall behöver vi omvandla hur vinklar räknas.
+
+1. Mer om rätvinkliga trianglar: matteboken.se: sök på Pythagoras sats. 
+1. Mer om cosinus och sinus: titta på https://www.matteboken.se/lektioner/matte-4/trigonometri/enhetscirkeln-och-perioder
+
+Pilen som visar riktningen i Scratch
+
+Vi börjar med förflyttningar längs x och y, alltså +/- 1.
+
+Längden på pilen ska alltid vara ett för att stegen ska vara lika långa oavsett vilken riktning vi går i.
+Pilen talar alltså om hur vi ska uppdatera x och y för att ta exakt ett steg, oavsett riktning.
+
+Exemplet 45 grader, Pythagoras sats.
+
+Från vinkel till pilens riktning
+
+Pilen kommer att peka i riktningen (cos v, sin v) med v = 0 rakt åt höger och ökande vinkel moturs.
+Läs mer på matteboken.se om du vill veta mer. Annars kan du nöja dig med att vi skriver testfall
+som övertygar oss att det stämmer.
+
+`pointTowards` (peka i riktning)
+
+Gå över från Scratchs koordinatsystem till radianer i enhetscirkeln? Vi behöver en funktion för detta. Vi skriver testfallen först.
+
+`pointTowards` sparar riktningen i variabeln `direction`. Det räknas från sprajtens mittpunkt till den angivna punkten
+
+Skriva testfall för pointTowards
+
+0 grader. Pekar vi i rätt riktning och är längden = 1? (Pythagoras sats)
+
+Sen lägger vi till testfallen för 90, 180, 270 grader och testkör
+
+Sen lägger vi till 45 grader och testkör
+
+Slutligen 135, 225, 315 grader och testkör
+
+`moveSteps` flyttar ett steg i den riktning som direction har
+Vi skriver testfall för `moveSteps`
+
 # Referenser 
 * https://studio.code.org/projects/applab/a8BQLOAeazZu8Yzv1hsOT1TNpa5MUwu0r1ZIxEf3sEY
 
