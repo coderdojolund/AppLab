@@ -131,6 +131,8 @@ Varför är det två `pointTowards` i `whale`?
 1. Det första `pointTowards` är namnet punkten i `whale.pointTowards`
 1. Det andra `pointTowards` talar om att jobbet görs av en funktion längre ner i koden med samma namn. Vi använder samma namn för enkelhets skull
 
+Varför delar vi upp koden? Det blir lättare att först hur sprajten `whale` fungerar vi lägger funktionerna för sig själv.
+
 Om vi nu lägger in vår kod i `update()` så går det att köra och vi kan se loggutskrifter. Inget mer händer än.
 
 Nu kan vår kod se ut ungefär så här:
