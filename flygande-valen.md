@@ -97,7 +97,7 @@ moveSteps 10
 ...
 ```
 
-### Peka valen i en viss riktning
+### Peka valen åt en punkt (x, y)
 Valen är en sprajt men i AppLab finns inga sprajtar. Vi kan själva skriva kod som efterliknar det som Scratch gör.
 
 Vad är en sprajt egentligen? Om vi öppnar info-rutan för en sprajt i Scratch, ser vi lite av den information som en sprajt innehåller. Så här ser valens info ut:
@@ -106,7 +106,7 @@ Vad är en sprajt egentligen? Om vi öppnar info-rutan för en sprajt i Scratch,
 
 Vi ser att sprajten har olika egenskaper som kan ha olika värden. 
 I Scratch gäller följande:
-* `direction` är det håll som sprajten rör sig åt. Riktningen räknas i grader med 0 grader rakt uppåt, 90 grader rakt åt höger, 180 grader rakt neråt och 270 grader rakt åt vänster.
+* `direction` är det håll som sprajten rör sig åt. Riktningen räknas i grader med 0 grader rakt uppåt, 90 grader rakt åt höger, 180 grader rakt neråt och 270 grader rakt åt vänster. Men vi kan vänta med det.
 * `x` och `y` talar om var sprajtens mittpunkt är. Det kan vi se i Scratch genom att dra omkring en sprajt och se hur `x` och `y` ändrar sig eller genom att sätta en ny mittpunkt på sprajten och se att x och y är samma fastän sprajten hoppar omkring.
 
 Visst verkar `x`, `y` och `direction` intressanta för oss? Vi ska ju peka valen i riktning mot `lastClick` och sen gå 10 steg enligt beskrivningen. Om vi skapar en variabel som heter `whale` med egenskaperna `x`, `y` och `direction` skulle det vara snyggt att kunna skriva kod av typen
