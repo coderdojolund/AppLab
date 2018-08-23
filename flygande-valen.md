@@ -91,10 +91,7 @@ function update() {
 
 När vi trycker på skärmen ser vi utskrifter av koordinaterna där vi tryckte. Koordinaterna verkar vara flyttal, alltså med decimaler:
 ```
-...
-pointTowards 246.4 149.333333334
-moveSteps 10
-...
+246.4 149.333333334
 ```
 
 ### Peka valen åt en punkt (x, y)
@@ -149,6 +146,11 @@ Varför delar vi upp koden? Det blir lättare att först hur sprajten `whale` fu
 
 Om vi nu lägger in vår kod i `update()` så går det att köra och vi kan se loggutskrifter. Inget mer händer än.
 
+```
+pointTowards 246.4 149.333333334
+moveSteps 10
+```
+
 Nu kan vår kod se ut ungefär så här:
 
 ```javascript
@@ -171,6 +173,47 @@ function moveSteps(steps) {
   console.log("moveSteps " + steps);
 }
 ```
+
+### Nästa steg
+
+Nu vi vill få liv i de här två raderna som vi började på innan:
+```javascript
+  whale.pointTowards(lastClick.x, lastClick.y);
+  whale.moveSteps(3);
+```
+Vi börjar med `moveSteps(1)`, dvs. vad som ska hända om vi bara går *ett* steg.
+
+whale.moveSteps(1) ska flytta valen ett steg i den riktning som sprajten pekar.
+Här finns det minst tre saker att lägga märke till:
+1. *Varifrån* ska valen flytta?
+2. Vad är ett steg?
+3. *Åt vilket håll* ska valen gå?
+
+* Varifrån? Det är ju x och y som vi redan har i vår kod.
+* Vad är ett steg? Eftersom x och y räknas i pixlar säger vi att ett steg är en pixel, som i Scratch.
+* Vilken riktning? Ja, den har vi ju ställt in med pointTowards().
+
+Vi försöker skriva några testfall för att se om vi har allt vi behöver för att koda.
+
+Säg att valen börjar på position x, y = (10, 10) och pekar åt punkten (50, 10). Om vi går ett steg ska valen vara på x, y = (11, 10).
+
+TODO: Bild med koordinatsystemet i AppLab.
+
+Koden för att testa att valen går rätt kan se ut så här.
+```javascript
+function testWhale() {
+  whale.goto(10, 10);
+  whale.pointTowards(50, 10);
+  whale.moveSteps(1);
+  if (whale.x == 11 && whale.y == 10) {
+    console.log("Yay whale");
+  } else {
+    console.log("Fail whale");
+  }
+}
+```
+När vi skriver testet ser vi att valen måste kunna starta på rätt plats. Vi behöver alltså koda Scratch-blocket `goto x: y:`.
+
 
 ### Lite matte och många testfall
 
