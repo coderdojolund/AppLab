@@ -122,7 +122,13 @@ var whale = {x: 0, y: 0, direction: 0};
 ```
 I JavaScript kommer värdena att heta `whale.x`, `whale.y` och `whale.direction`, ungefär som variabler i Scratch som är knutna till en viss sprajt. Just nu har alla värdet 0.
 
-Men `whale.pointTowards` och `whale.moveSteps`: var kommer de ifrån?
+Vi kan labba i Scratch med lite kod som den här. 
+Om vi t.ex. pekar rakt till höger om valen och trycker på mellanslag kan vi se att ett steg i Scratch verkar motsvara en pixel.
+
+![PointTowards](https://user-images.githubusercontent.com/4598641/44541630-d895af00-a70a-11e8-88b4-5a13d6ecbc2b.png)
+
+Nu kan vi fundera på `whale.pointTowards` och `whale.moveSteps` i vår kod.
+
 De lägger vi också in i `whale` som funktioner.
 Eftersom alla sprajtar kommer att vilja använda de funktionerna så använder vi ett trick i JavaScript.
 ```javascript
