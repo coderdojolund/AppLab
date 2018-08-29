@@ -256,6 +256,61 @@ Slutligen 135, 225, 315 grader och testkör
 `moveSteps` flyttar ett steg i den riktning som direction har
 Vi skriver testfall för `moveSteps`
 
+# goto(x, y)
+Vi kodar ju inte bara valspelet utan också bitar av Scratch. 
+
+Tack och lov återanvändbart i nästa spel :)
+
+Så vi ger inte upp!
+
+Vi tittar o markerar i vår kod vad som är unikt för valspelet och vad som vi kan använda i nästa spel.
+
+Vi hade sparat några TODO
+
+goto(x, y): TODO
+
+Kommentarer i kod. 
+
+Kod ljuger inte men kommentarer gör det ibland (Ron Jeffries)
+
+Vi angriper TODO i goto genom att skriva ett testfall istället
+
+Testfall?
+
+```javascript
+whale.goto(0, 0)
+whale.x == 0
+whale.y == 0
+```
+Det testar vi ju redan.
+Vad mer?
+
+Tänk på hur man sätter mittpunkten i Scratch i sprajteditorn
+
+Valens mittpunkt är det vi menar just nu
+
+getXPosition() och getYPosition är alltid övre vänstra hörnet
+
+Så om vi börjar med getXPosition och lägger till halva valens bredd så bör vi hamna högst en pixel från mittpunkten x
+
+Samma för getYPosition och halva valens höjd och högst en pixel från y
+
+Nu kan vi skriva vårt testfall
+
+Nu är koden lättare att skriva
+
+Och testfallet har vi kvar för framtiden
+
+Konsollen: ctrl-shift I
+
+Math.abs
+
+Det här med "whaleRight" ser konstigt ut. goto ska ju inte hålla reda på kostymens namn åt oss
+
+Vi lägger in det som en egenskap i valen istället
+
+whale.costume
+
 # Referenser 
 * https://studio.code.org/projects/applab/a8BQLOAeazZu8Yzv1hsOT1TNpa5MUwu0r1ZIxEf3sEY
 
